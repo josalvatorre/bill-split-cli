@@ -16,6 +16,9 @@ ensure_venv_exists_with_dependencies: ensure_scripts_are_executable
 	VENV_ACTIVATE=$(VENV_ACTIVATE) ./scripts/activate-venv-then.sh pip install \
 		pyright pandas
 
+.PHONY: set-up
+set-up: ensure_venv_exists_with_dependencies
+
 .PHONY: clean
 clean:
 	rm -rf venv/
