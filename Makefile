@@ -4,7 +4,7 @@ VENV_ACTIVATE = venv/bin/activate
 
 .PHONY: ensure_scripts_are_executable
 ensure_scripts_are_executable:
-	chmod 554 ./scripts/*
+	chmod 754 ./scripts/*
 
 .PHONY: ensure_venv_exists_with_dependencies
 ensure_venv_exists_with_dependencies: ensure_scripts_are_executable
