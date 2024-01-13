@@ -8,7 +8,7 @@ ensure_scripts_are_executable:
 
 .PHONY: ensure_venv_exists_with_dependencies
 ensure_venv_exists_with_dependencies: ensure_scripts_are_executable
-	stat ./venv || ( \
+	stat ./venv &> /dev/null || ( \
 		$(ORIGINAL_PYTHON_PATH) -m venv ./venv \
 		&& VENV_ACTIVATE=$(VENV_ACTIVATE) ./scripts/activate-venv-then.sh pip install --upgrade pip \
 	)
